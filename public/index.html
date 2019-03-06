@@ -77,10 +77,11 @@
 
 $('#calendar').fullCalendar({
   header: {
-    left:   'listDay,listWeek,listMonth',
+    left:   'listDay,listWeek',
     center: 'title',
     right:  'month prev,next'
   },
+  defaultView: 'listWeek',  
   selectable:true,
   eventLimit:true,
   views: {
@@ -88,8 +89,7 @@ $('#calendar').fullCalendar({
       eventLimit: 4
     },
     listDay: { buttonText: 'list day' },
-    istWeek: { buttonText: 'list week' },
-    listMonth: { buttonText: 'list month' }
+    listWeek: { buttonText: 'list week' }
   },
   events: eventsArray,
   dayClick: function(date, jsEvent, view) {
@@ -98,6 +98,7 @@ $('#calendar').fullCalendar({
     $("#studentName").val('');
     $("#startTime").val('');
     $("#endTime").val('');
+    $("input").removeAttr("disabled");
     $("#deleteBtn").addClass("d-none");
     $("#submitBtn").removeClass("d-none");
   },
@@ -106,6 +107,7 @@ $('#calendar').fullCalendar({
     var date = calEvent.start._i.split('T')[0];
     var startTime = calEvent.start._i.split('T')[1];
     var endTime = calEvent.end._i.split('T')[1];
+    $("input").attr("disabled","disabled");
     $("#deleteBtn").removeClass("d-none");
     $("#submitBtn").addClass("d-none");
     $("#myModal").attr("date",date);
