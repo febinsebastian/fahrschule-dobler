@@ -77,16 +77,19 @@
 
 $('#calendar').fullCalendar({
   header: {
-    left:   ' ',
+    left:   'listDay,listWeek,listMonth',
     center: 'title',
-    right:  'prev,next'
+    right:  'month prev,next'
   },
   selectable:true,
   eventLimit:true,
   views: {
     agenda: {
       eventLimit: 4
-    }
+    },
+    listDay: { buttonText: 'list day' },
+    istWeek: { buttonText: 'list week' },
+    listMonth: { buttonText: 'list month' }
   },
   events: eventsArray,
   dayClick: function(date, jsEvent, view) {
