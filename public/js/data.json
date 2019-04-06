@@ -1,0 +1,23 @@
+{
+    "student1":{
+        "year_weekNumber"  :  {
+            "frequency" :   2,
+            "monday"    :   {
+                "start_time_slot_1"   :   "8:00 AM",
+                "end_time_slot_1"   :   "10:00 AM",
+                "start_time_slot_2"   :   "2:00 PM",
+                "end_time_slot_2"   :   "4:00 PM",
+                "start_time_slot_3"   :   "6:00 PM",
+                "end_time_slot_3"   :   "8:00 PM"
+            },
+            "tuesday"    :   {
+                "start_time_slot_1"   :   "8:00 AM",
+                "end_time_slot_1"   :   "10:00 AM",
+                "start_time_slot_2"   :   "2:00 PM",
+                "end_time_slot_2"   :   "4:00 PM",
+                "start_time_slot_3"   :   "6:00 PM",
+                "end_time_slot_3"   :   "8:00 PM"
+            }
+        }
+    }
+}

@@ -1,90 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/fullcalendar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-	<title>Dobler</title>
+  <title>Dobler</title>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Fahrschule Dobler Gmph</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a class="nav-link" href="addStudent.html">Add Student</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="schedule.html">Add Student</a>
-    </li>
-    </ul>
-</nav>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-            <form>
-                    <div class="form-group">
-                      <label for="studentName">Student Name</label>
-                      <input type="text" class="form-control" id="studentName" aria-describedby="emailHelp" placeholder="Enter Student Name">
-                    </div>
-                    <div class="row">
-                    <div class="col-sm-2">
-                            <div class="card">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Monday</h5>
-                                    </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-2">
-                            <div class="card">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Tuesday</h5>
-                                    </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                            <div class="card">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Wednesday</h5>
-                                    </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                            <div class="card">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Thursday</h5>
-                                    </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                            <div class="card">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Friday</h5>
-                                    </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                            <div class="card">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Sunday</h5>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-    </div>
-    </div>
-</div>
 
-</div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Fahrschule Dobler Gmph</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="addStudent.html">Add Student</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="schedule.html">Schedule</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form>
+          <div class="form-group">
+            <label for="studentName">Student Name</label>
+            <input type="text" class="form-control" id="studentName" aria-describedby="emailHelp"
+              placeholder="Enter Student Name">
+          </div>
+          <div class="form-group">
+            <label for="weekNumber">Week Number</label>
+            <select id="weekNumber" class="form-control">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="frequency">Frequency</label>
+            <select id="frequency" class="form-control">
+              <option value="1">1 Time</option>
+              <option value="2">2 Times</option>
+              <option value="3">3 Times</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Monday</h5>
+                  <div class="form-group">
+                    <label for="monday_available_time_from_1">From</label>
+                    <input type="time" class="form-control" id="monday_available_time_from_1" placeholder="Time">
+                    <label for="monday_available_time_to_1">To</label>
+                    <input type="time" class="form-control" id="monday_available_to_from_1" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Tuesday</h5>
+                  <div class="form-group">
+                    <label for="tuesday_available_time_from_1">From</label>
+                    <input type="time" class="form-control" id="tuesday_available_time_from_1" placeholder="Time">
+                    <label for="tuesday_available_time_to_1">To</label>
+                    <input type="time" class="form-control" id="tuesday_available_to_from_1" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Wednesday</h5>
+                  <div class="form-group">
+                    <label for="wednesday_available_time_from_1">From</label>
+                    <input type="time" class="form-control" id="wednesday_available_time_from_1" placeholder="Time">
+                    <label for="wednesday_available_time_to_1">To</label>
+                    <input type="time" class="form-control" id="wednesday_available_to_from_1" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 mt-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Thursday</h5>
+                  <div class="form-group">
+                    <label for="thursday_available_time_from_1">From</label>
+                    <input type="time" class="form-control" id="thursday_available_time_from_1" placeholder="Time">
+                    <label for="thursday_available_time_to_1">To</label>
+                    <input type="time" class="form-control" id="thursday_available_to_from_1" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 mt-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Friday</h5>
+                  <div class="form-group">
+                    <label for="friday_available_time_from_1">From</label>
+                    <input type="time" class="form-control" id="friday_available_time_from_1" placeholder="Time">
+                    <label for="friday_available_time_to_1">To</label>
+                    <input type="time" class="form-control" id="friday_available_to_from_1" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 mt-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-center">Saturday</h5>
+                  <div class="form-group">
+                    <label for="saturday_available_time_from_1">From</label>
+                    <input type="time" class="form-control" id="saturday_available_time_from_1" placeholder="Time">
+                    <label for="saturday_available_time_to_1">To</label>
+                    <input type="time" class="form-control" id="saturday_available_to_from_1" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4" id="scheduleForm">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      
+  });
+  </script>
 </body>
+
 </html>
