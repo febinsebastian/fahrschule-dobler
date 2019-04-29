@@ -2,3 +2,9 @@
 .ui-timepicker-container {
 	z-index: 99999 !important;
 }
+.addBtn {
+	font-size: 12px;
+	float: right;
+	color: #007bff !important;
+	cursor: pointer;
+}

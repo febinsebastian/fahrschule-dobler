@@ -6,20 +6,20 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/fullcalendar.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">-->
   <title>Dobler</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">Fahrschule Dobler Gmph</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="addStudent.html">Add Student</a>
+      <li class="nav-item">
+        <a class="nav-link" href="addStudent.html">Student</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="schedule.html">Schedule</a>
@@ -29,14 +29,11 @@
   <div class="container">
     <div class="row">
       <div class="col-sm">
-            <div class="form-group mt-3">
-                    <label for="weekNumber">Week Number</label>
-                    <select id="weekNumber" class="form-control">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
-                  </div>
+          <div class="form-group mt-3">
+              <label for="weekNumber">Week Number</label>
+              <select id="weekNumber" class="form-control">
+              </select>
+            </div>
         <table class="table mt-3">
           <thead>
             <tr>
@@ -66,10 +63,10 @@
   </div>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <!--<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
   <script>
-    // Initialize Firebase
     var config = {
       apiKey: "AIzaSyDhO4gafjucAlXdJmb1OEfbAh7QM9ZWCNE",
       authDomain: "fahrschule-dobler.firebaseapp.com",
@@ -79,7 +76,7 @@
       messagingSenderId: "1023353756014"
     };
     firebase.initializeApp(config);
-  </script>
+  </script>-->
 </body>
 
 </html>
