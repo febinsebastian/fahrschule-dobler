@@ -1,4 +1,5 @@
 $(function () {
+    var URL = 'https://febindrivingschool.000webhostapp.com/febin_driving_school_teacher/index.php'
     var weekNumberOption = '<option value="">select week number</option>';
     for(var j=1;j<53;j++){
         var start = moment().day("Monday").week(j);
@@ -6,8 +7,6 @@ $(function () {
         weekNumberOption += '<option value="'+ j +'">'+ j + ' - ' + start.format('MMM-DD-YYYY') +' to '+ end.format('MMM-DD-YYYY')+'</option>'
     }
     $('#weekNumber').append(weekNumberOption);
-    
-
     $("#submitBtn").click(function () {
         var name = $("#studentName").val();
         var date = $("#myModal").attr("date");
@@ -64,18 +63,7 @@ $(function () {
         });
         
     });
-    $('#addStudent').on('submit', function(e) {
-        e.preventDefault();
-        var studentName = $("#studentName").val(),
-        email = $("#email").val(),
-        mobile = $("#mobile").val(),
-        data = {
-            "studentName": studentName,
-            "email": email,
-            "mobile":mobile
-        };
-        console.log(data);
-    });
+    
     $(".addNewIntervel").on('click', function(e){
         var days = ['monday','tuesday','wednesday','thursday','friday','saturday'];
         var day = $(this).prev().attr('day');

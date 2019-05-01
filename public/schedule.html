@@ -11,36 +11,43 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Fahrschule Dobler Gmph</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="addStudent.html">Student</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="schedule.html">Schedule</a>
-      </li>
-    </ul>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="images/logo_s.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="navbar-nav mr-auto ml-5">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Week plan</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="addStudent.html">Student</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="schedule.html">Schedule</a>
+          </li>
+        </ul>
+      </nav>
   <div class="container mt-4">
     <div class="row">
       <div class="col-sm-12">
         <form id="scheduleForm">
-          <div class="form-group">
-            <label for="weekNumber">Week Number</label>
-            <select id="weekNumber" class="form-control">
-            </select>
-          </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
+                <label for="weekNumber">Week Number</label>
+                <select id="weekNumber" class="form-control">
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
                 <label for="studentName">Student Name</label>
-                <input type="text" class="form-control" id="studentName" aria-describedby="emailHelp"
+                <input list="student_list" id="studentName" class="form-control" 
                   placeholder="Enter Student Name">
+                  <datalist id="student_list">
+                  </datalist>
               </div>
             </div>
             <div class="col-sm-6">
@@ -53,6 +60,17 @@
                 </select>
               </div>
             </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="time">Time</label>
+                  <select id="time" class="form-control">
+                    <option value="45">45 Minute</option>
+                    <option value="90">90 Minute</option>
+                    <option value="135">135 Minute</option>
+                    <option value="180">180 Minute</option>
+                  </select>
+                </div>
+              </div>
           </div>
 
           <div class="row">
@@ -164,11 +182,14 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary mt-4">Submit</button>
+          <button type="submit" class="btn btn-primary mt-4">Add</button>
         </form>
         <div class="row mt-4">
+          <div class="m-4 w-100 text-center">
+          <h2>Available Students in the week</h2>
+        </div>
           <div class="col-sm-12">
-            <table class="table">
+            <table class="table table-striped table-bordered">
               <thead>
                 <tr>
                   <th rowspan="3">Student</th>
@@ -183,25 +204,74 @@
               <tbody>
                 <tr>
                   <td>Student 1</td>
-                  <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                  <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                  <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                  <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                  <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                  <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
                 </tr>
                 <tr>
-                    <td>Student 2</td>
-                    <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                    <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                    <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                    <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                    <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                    <td><div>10:00 11:00</div><div>10:00 11:00</div><div>10:00 11:00</div></td>
-                  </tr>
+                  <td>Student 2</td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                  <td>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                    <div>10:00 11:00</div>
+                  </td>
+                </tr>
               </tbody>
             </table>
-          </div>
+            <button class="btn btn-primary" id="schedule">Schedule</button>
+          </div>  
         </div>
       </div>
     </div>
@@ -211,6 +281,7 @@
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/schedule.js"></script>
   <script type="text/javascript" src="js/moment.min.js"></script>
 </body>
 
