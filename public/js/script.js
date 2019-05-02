@@ -1,5 +1,5 @@
 $(function () {
-    var URL = 'https://febindrivingschool.000webhostapp.com/febin_driving_school_teacher/index.php'
+    var URL = 'https://febindrivingschool.000webhostapp.com/febin_driving_school_teacher/index.php/drivingSchool'
     var weekNumberOption = '<option value="">select week number</option>';
     for(var j=1;j<53;j++){
         var start = moment().day("Monday").week(j);
@@ -48,20 +48,35 @@ $(function () {
     $("#scheduleForm").on('submit', function(e) {
         e.preventDefault();
         var days = ['monday','tuesday','wednesday','thursday','friday','saturday'];
-        var studentName = $("#studentName").val(),
+        var studentName = $( "#studentName option:selected" ).text(),
         weekNumber = $("#weekNumber").val(),
-        frequency = $("#frequency").val();
+        frequency = $("#frequency").val(),
+        studentId = $("#studentName").val(),
+        time = $("#time").val(),
+        data = {
+            "student_id" : studentId,
+            "student_name" : studentName,
+        };
+        data["2019_"+weekNumber] = {
+            "frequency" : frequency,
+            "time" : time
+        }
         $('.card').each(function(i, element) {
             var counter = 1;
+            data["2019_"+weekNumber][days[i]] = {};
             while(counter < 4){
-                if($(element).find("#"+ days[i] +"_available_time_from_"+counter) && $(element).find("#"+ days[i] +"_available_time_to_"+counter)){
-                    console.log($(element).find("#"+ days[i] +"_available_time_from_"+counter).val());
-                    console.log($(element).find("#"+ days[i] +"_available_time_to_"+counter).val());
+                data["2019_"+weekNumber][days[i]]["start_time_slot_"+counter] = "";
+                data["2019_"+weekNumber][days[i]]["end_time_slot_"+counter] = "";
+                if($(element).find("#"+ days[i] +"_available_time_from_"+counter).length != 0){
+                    data["2019_"+weekNumber][days[i]]["start_time_slot_"+counter] = $(element).find("#"+ days[i] +"_available_time_from_"+counter).val();
+                }
+                if($(element).find("#"+ days[i] +"_available_time_to_"+counter).length != 0){
+                    data["2019_"+weekNumber][days[i]]["end_time_slot_"+counter] = $(element).find("#"+ days[i] +"_available_time_to_"+counter).val();
                 }
                 counter++;
             }
         });
-        
+        addSchedule(data);
     });
     
     $(".addNewIntervel").on('click', function(e){
@@ -80,4 +95,38 @@ $(function () {
             $(this).prev().after(intervelElement);
         }
     });
+
+    $("#weekNumber").change(function(){
+       var weekNumber = $("#weekNumber").val();
+       getSchedule("2019_"+weekNumber)
+      });
+
+    function addSchedule(data){
+        //$.post(URL+'/student_preference',data, function(data){});
+        $.ajax({
+            url: URL+'/student_preference',
+            type: 'POST',
+            data: data,
+            datatype: 'json',
+            beforeSend: function(){
+                loader("start");
+            },
+            success: function (data) { 
+                
+            },
+            error: function (jqXHR, textStatus, errorThrown) { 
+
+            },
+            complete: function(){
+                loader("stop");
+                success("Student added successfully");
+            }
+        });
+    }
+
+    function getSchedule(param){
+        $.get(URL+"/student_preferrences", function(data, status){
+            console.log(data);
+          });
+    }
 });

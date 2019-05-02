@@ -6,9 +6,9 @@ $(function () {
         var student_list = student.data;
         var student_list_table = '';
         for(var i=0;i<student_list.length;i++){
-            student_list_table +=  '<option student_id="'+ student_list[i].id +'" value="'+ student_list[i].name +'">'
+            student_list_table +=  '<option value="'+ student_list[i].id +'">'+ student_list[i].name +'</option>'
         }
-        $("#student_list").html(student_list_table);
+        $("#studentName").html(student_list_table);
     }
     createDataList();
 })
