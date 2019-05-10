@@ -1,7 +1,7 @@
-$(function () {
+$(document).ready(function(){
     const URL = 'https://febindrivingschool.000webhostapp.com/febin_driving_school_teacher/index.php/drivingSchool';
     //var student = {"status":true,"data":[{"id":"2","name":"Jerin","email":"jerinjoshy1@gmail.com","mobile":"9567376700"},{"id":"3","name":"Febin","email":"febin@gmail.com","mobile":"123456789"},{"id":"4","name":"dfwd","email":"febinchemperi@gmail.com","mobile":"9916799370"},{"id":"5","name":"ewew","email":"sd@www.dd","mobile":"2323232332"},{"id":"6","name":"sd","email":"febines12@gmail.com","mobile":"1234567890"},{"id":"7","name":"febnin","email":"fsdd@ksklf.jf","mobile":"9848574565"},{"id":"8","name":"sd","email":"febinchemperi@gmail.com","mobile":"1111111111"}]};
-    updateList();
+    loadStudendList();
     
     //Onclick on the Add Student Button following function will execute
     $('#addStudent').on('click', function(e) {
@@ -17,15 +17,15 @@ $(function () {
         addStudend(data);
     });
     //Onclick on the Edit Button following function will execute
-    $(".editStudent").on("click", function(e){
-        e.preventDefault();
+    $(".editStudent").click(function (e) {
+       
         var studentObj = JSON.parse($(this).attr('studentObj'));
         $("#studentName").val(studentObj.name);
         $("#email").val(studentObj.email);
         $("#mobile").val(studentObj.mobile);
     })
     //Onclick on the Delete Button following function will execute
-    $(".deleteStudent").on("click", function(e){
+    $(".deleteStudent").click(function(e){
         e.preventDefault();
         
     })
@@ -40,14 +40,13 @@ $(function () {
                 loader("start");
             },
             success: function (data) { 
-                
+                success("Student added successfully");
             },
             error: function (jqXHR, textStatus, errorThrown) { 
 
             },
             complete: function(){
                 loader("stop");
-                success("Student added successfully");
                 loadStudendList();
             }
         });

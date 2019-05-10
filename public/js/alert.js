@@ -8,9 +8,9 @@ function success(msg) {
     if (msg != '') {
         elm.text(msg);
     }
-    elm.className = "show";
+    elm.addClass("show");
     setTimeout(function () {
-        elm.className = elm.className.replace("show", "");
+        elm.className = elm.removeClass("show");
     }, 3000);
 }
 function loader(action) {

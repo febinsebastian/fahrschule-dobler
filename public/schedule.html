@@ -188,7 +188,7 @@
           <h2>Available Students in the week</h2>
         </div>
           <div class="col-sm-12 mb-5">
-            <table class="table table-striped table-bordered">
+            <table class="table table-striped table-bordered" id="scheduleTable">
               <thead>
                 <tr>
                   <th rowspan="3">Student</th>
@@ -201,72 +201,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Student 1</td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Student 2</td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                  <td>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                    <div>10:00 11:00</div>
-                  </td>
-                </tr>
               </tbody>
             </table>
             <button class="btn btn-primary" id="schedule">Schedule</button>
@@ -277,6 +211,27 @@
   </div>
 
   </div>
+  <!-- Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal-danger">
+        <h5 class="modal-title" id="exampleModalLongTitle">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+  <div class="loading d-none"></div>
+  <div id="toster">Success</div>
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
