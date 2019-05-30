@@ -53,7 +53,9 @@ $(function () {
         weekNumber = $("#weekNumber").val(),
         frequency = $("#frequency").val(),
         studentId = $("#studentName").val(),
-        time = $("#time").val(),
+        time = $("#time_1").val(),
+        time_2 = $("#time_2").val(),
+        time_3 = $("#time_3").val(),
         data = {};
         data[studentId] = {};
         data[studentId]["2019-"+weekNumber] = {
@@ -95,9 +97,22 @@ $(function () {
     });
 
     $("#weekNumber").change(function(){
-       var weekNumber = $("#weekNumber").val();
+       const weekNumber = $("#weekNumber").val();
        getSchedule("2019-"+weekNumber);
     });
+
+    $("#frequency").change(function(){
+        const frequency = $("#frequency").val();
+        if(frequency == 1){
+            $("#time_2, #time_3").parents(".col-sm-3").addClass("d-none");
+        }else if(frequency == 2){
+            $("#time_3").parents(".col-sm-3").addClass("d-none");
+            $("#time_2").parents(".col-sm-3").removeClass("d-none");
+        }else {
+            $("#time_2, #time_3").parents(".col-sm-3").removeClass("d-none");
+        }
+     });
+
     $("#studentName").change(function(){
         var weekNumber = $("#weekNumber").val();
         var studentId = $("#studentName").val();
@@ -107,7 +122,8 @@ $(function () {
 
     $("#schedule").click(function(){
         var weekNumber = $("#weekNumber").val();
-        calculateSchedule("2019-"+weekNumber);
+        //calculateSchedule("2019-"+weekNumber);
+        calculateSchedule(weekNumber);
     });
 
     function updateTable(data, week){
@@ -164,10 +180,10 @@ $(function () {
             beforeSend: function(){
                 loader("start");
             },
-            success: function (data) { 
+            success: function (data) {
                 getSchedule(week);
             },
-            error: function (jqXHR, textStatus, errorThrown) { 
+            error: function (jqXHR, textStatus, errorThrown) {
 
             },
             complete: function(){
@@ -217,7 +233,7 @@ $(function () {
             beforeSend: function(){
                 loader("start");
             },
-            success: function (data) { 
+            success: function (data) {
                 
             },
             error: function (jqXHR, textStatus, errorThrown) { 
