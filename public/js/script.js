@@ -53,14 +53,16 @@ $(function () {
         weekNumber = $("#weekNumber").val(),
         frequency = $("#frequency").val(),
         studentId = $("#studentName").val(),
-        time = $("#time_1").val(),
+        time_1 = $("#time_1").val(),
         time_2 = $("#time_2").val(),
         time_3 = $("#time_3").val(),
         data = {};
         data[studentId] = {};
         data[studentId]["2019-"+weekNumber] = {
             "frequency" : frequency,
-            "time" : time
+            "time_1" : time_1,
+            "time_2" : time_2,
+            "time_3" : time_3
         }
         $('.card').each(function(i, element) {
             var counter = 1;
